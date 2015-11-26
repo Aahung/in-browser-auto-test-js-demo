@@ -78,13 +78,12 @@ function sum(a, b) {
 `;
 
 function loadLocalStorage() {
+    loadedSource = originSource;
     if(typeof(Storage) !== "undefined") {
         var savedSource = localStorage.getItem("saved");
         if (savedSource) {
             loadedSource = savedSource;
         }
-    } else {
-        loadedSource = originSource;
     }
 }
 
