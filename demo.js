@@ -120,7 +120,16 @@ function onSave() {
     var source = sourceEditor.getValue();
     saveLocalStorage(source);
     unsetFunctions();
-    eval(source);
+    try {
+        eval(source);
+    } catch (e) {
+        alert("Check syntax errors.")
+        return;
+    }
+    if (!isPrime || !sum) {
+        alert("Do not change function names");
+        return;
+    }
     R1 = runPrimeTests(isPrime);
     R2 = runSumTests(sum);
     r1 = R1[0];
