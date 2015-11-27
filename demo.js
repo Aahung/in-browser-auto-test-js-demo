@@ -141,6 +141,10 @@ function onSave() {
     outputConsole.insert(r2);
     outputConsole.insert(s1);
     outputConsole.insert(s2);
+    if (R1[2] && R2[2]) {
+        outputConsole.insert("Deploying to production server.\n");
+        outputConsole.insert("Deployed.\n");
+    }
 }
 
 function reset() {
@@ -582,7 +586,7 @@ function runPrimeTests(isPrime) {
     var summary = "Ran " + (countFail + countPass) + " tests on isPrime, pass " 
                 + countPass + " fail " + countFail + ".\n";
 
-    return [results, summary];
+    return [results, summary, countFail == 0];
 }
 
 function runSumTests(sum) {
@@ -786,5 +790,5 @@ function runSumTests(sum) {
     var summary = "Ran " + (countFail + countPass) + " tests on sum, pass " 
                 + countPass + " fail " + countFail + ".\n";
 
-    return [results, summary];
+    return [results, summary, countFail == 0];
 }
