@@ -1,81 +1,81 @@
 var loadedSource;
 
-var originSource = `
-/* 
-    
-    Click "Save & Test", your code will be tested 
-    with predefined test cases automatically, 
-    results will be displayed on the left side.
+var originSource = '\n\
+/*  \n\
+     \n\
+    Click "Save & Test", your code will be tested  \n\
+    with predefined test cases automatically,  \n\
+    results will be displayed on the left side. \n\
+ \n\
+    ENJOY \n\
+ \n\
+    ================================================ \n\
+    Do not create new functions either  \n\
+    modify signitures of functions \n\
+    ================================================ \n\
+*/ \n\
+ \n\
+// this function accepts an integer as input parameter \n\
+// output: \n\
+//     1: the integer is a prime number \n\
+//     2: the integer is not a prime number \n\
+// for example: n = 11, isPrime(n) = 1 \n\
+function isPrime(n) { \n\
+    return (n % 2 == 1); \n\
+} \n\
+ \n\
+// this function accept two number  \n\
+// (at most 13 decimal place) as input parameters \n\
+// output: \n\
+//     a + b \n\
+// for example: a = 0.1, b = 0.2, sum(a, b) = 0.3 \n\
+function sum(a, b) { \n\
+    return a + b; \n\
+} \n\
+';
 
-    ENJOY
-
-    ================================================
-    Do not create new functions either 
-    modify signitures of functions
-    ================================================
-*/
-
-// this function accepts an integer as input parameter
-// output:
-//     1: the integer is a prime number
-//     2: the integer is not a prime number
-// for example: n = 11, isPrime(n) = 1
-function isPrime(n) {
-    return (n % 2 == 1);
-}
-
-// this function accept two number 
-// (at most 13 decimal place) as input parameters
-// output:
-//     a + b
-// for example: a = 0.1, b = 0.2, sum(a, b) = 0.3
-function sum(a, b) {
-    return a + b;
-}
-`;
-
-var perfectSource = `
-/* 
-    
-    Click "Save & Test", your code will be tested 
-    with predefined test cases automatically, 
-    results will be displayed on the left side.
-
-    ENJOY
-
-    ================================================
-    Do not create new functions either 
-    modify signitures of functions
-    ================================================
-*/
-
-// this function accepts an integer as input parameter
-// output:
-//     1: the integer is a prime number
-//     2: the integer is not a prime number
-// for example: n = 11, isPrime(n) = 1
-function isPrime(n) {
-    if (n < 2) {
-        return 0;
-    }
-    var root = parseInt(Math.sqrt(n));
-    for (var i = 2; i <= root; ++i) {
-        if (n % i === 0) {
-            return 0;
-        }
-    }
-    return 1;
-}
-
-// this function accept two number 
-// (at most 13 decimal place) as input parameters
-// output:
-//     a + b
-// for example: a = 0.1, b = 0.2, sum(a, b) = 0.3
-function sum(a, b) {
-    return (a + b).toFixed(14)
-}
-`;
+var perfectSource = '\n\
+/*  \n\
+     \n\
+    Click "Save & Test", your code will be tested  \n\
+    with predefined test cases automatically,  \n\
+    results will be displayed on the left side. \n\
+ \n\
+    ENJOY \n\
+ \n\
+    ================================================ \n\
+    Do not create new functions either  \n\
+    modify signitures of functions \n\
+    ================================================ \n\
+*/ \n\
+ \n\
+// this function accepts an integer as input parameter \n\
+// output: \n\
+//     1: the integer is a prime number \n\
+//     2: the integer is not a prime number \n\
+// for example: n = 11, isPrime(n) = 1 \n\
+function isPrime(n) { \n\
+    if (n < 2) { \n\
+        return 0; \n\
+    } \n\
+    var root = parseInt(Math.sqrt(n)); \n\
+    for (var i = 2; i <= root; ++i) { \n\
+        if (n % i === 0) { \n\
+            return 0; \n\
+        } \n\
+    } \n\
+    return 1; \n\
+} \n\
+ \n\
+// this function accept two number  \n\
+// (at most 13 decimal place) as input parameters \n\
+// output: \n\
+//     a + b \n\
+// for example: a = 0.1, b = 0.2, sum(a, b) = 0.3 \n\
+function sum(a, b) { \n\
+    return (a + b).toFixed(14) \n\
+} \n\
+';
 
 function loadLocalStorage() {
     loadedSource = originSource;
